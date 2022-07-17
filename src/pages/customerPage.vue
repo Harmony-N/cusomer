@@ -77,9 +77,21 @@
      {{props.row.date}}
        </q-td>
        <q-td key="menu" :props="props"> 
-       <q-btn flat @click="onItemClick">
-        ...
-       </q-btn>
+       <q-btn flat label="...">
+        <q-menu
+          transition-show="scale"
+          transition-hide="scale"
+        >
+          <q-list style="max-width: 113px">
+            <q-item clickable @click="onItemClick">
+              <q-item-section>View</q-item-section>
+            </q-item>
+            <q-item clickable @click="onItemClick">
+              <q-item-section>Blacklist</q-item-section>
+            </q-item>
+          </q-list>
+        </q-menu>
+      </q-btn>
        </q-td>
        
        </q-tr>
